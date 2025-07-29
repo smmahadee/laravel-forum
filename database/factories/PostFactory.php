@@ -17,7 +17,9 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => \App\Models\User::factory(),
+            'title' => str($this->faker->sentence)->before('.')->title(),
+            'body' => $this->faker->realText(600, true),
         ];
     }
 }

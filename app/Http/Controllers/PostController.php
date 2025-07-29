@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostResource;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        // return PostResource::collection(Post::paginate());
+        return inertia('Posts/Index', [
+            'posts' => PostResource::collection(Post::with('user')->paginate()),
+        ]);
     }
 
     /**
@@ -23,7 +27,7 @@ class PostController extends Controller
         //
     }
 
-    /**
+    /**p
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -36,7 +40,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+
+        return inertia('Posts/Show', [
+            'post' => PostResource::make($post->load('user')),
+        ]);
     }
 
     /**
