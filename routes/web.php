@@ -40,6 +40,4 @@ Route::get('/abc', fn() => 'test');
 Route::get('/another-abc', fn() => 'dev-asad');
 Route::get('/another-pull-request', fn() => 'dev-asad');
 
-
-
-// Asad pushed first
+// this code is written from dev-mahadee
