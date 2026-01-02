@@ -36,3 +36,6 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 Route::get('/test', function() {
     return PostResource::collection(Post::with('user')->paginate());
 });
+Route::get('/abc', fn() => 'test');
+Route::get('/another-abc', fn() => 'dev-asad');
+Route::get('/another-pull-request', fn() => 'dev-asad');
