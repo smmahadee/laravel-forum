@@ -36,5 +36,5 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 Route::get('/test', function() {
     return PostResource::collection(Post::with('user')->paginate());
 });
-
-Route::view('/comments', 'comments.index');
+Route::get('/abc', fn() => 'test');
+Route::get('/another-abc', fn() => 'dev-asad');
