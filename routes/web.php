@@ -37,3 +37,4 @@ Route::get('/test', function() {
     return PostResource::collection(Post::with('user')->paginate());
 });
 Route::get('/abc', fn() => 'test');
+Route::get('/another-abc', fn() => 'dev-asad');
